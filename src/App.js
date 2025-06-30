@@ -11,6 +11,24 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Example: wait for all data to load
+    async function loadEverything() {
+      // await your data fetching here, e.g.:
+      // await fetchData1();
+      // await fetchData2();
+      // await loadImages(); // if you want to preload images
+
+      // Simulate loading for demonstration purposes
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      setIsLoading(false);
+    }
+
+    loadEverything();
+  }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
